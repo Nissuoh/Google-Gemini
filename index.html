@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akademie der Professoren</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'mono': ['Fira Code', 'monospace'],
+            },
+            colors: {
+              'gray-900': '#121212',
+              'gray-800': '#1E1E1E',
+              'gray-700': '#2D2D2D',
+              'gray-600': '#3C3C3C',
+              'gray-400': '#9E9E9E',
+              'gray-200': '#E0E0E0',
+              'blue-500': '#2196F3',
+              'blue-600': '#1976D2',
+              'emerald-500': '#00C853',
+              'emerald-600': '#00A746',
+            },
+            boxShadow: {
+              'glow-emerald': '0 0 15px rgba(0, 200, 83, 0.5)',
+              'glow-blue': '0 0 15px rgba(33, 150, 243, 0.4)',
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1E1E1E;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2196F3;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #00C853;
+      }
+      
+      .code-editor-wrapper .line-numbers {
+        font-family: 'Fira Code', monospace;
+        font-size: 14px;
+        line-height: 24px;
+        padding-top: 16px; 
+        padding-bottom: 16px;
+        box-sizing: border-box;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      
+      .code-editor-wrapper textarea,
+      .code-editor-wrapper pre {
+          font-family: 'Fira Code', monospace !important;
+          font-size: 14px !important;
+          line-height: 24px !important; 
+          padding: 16px !important; 
+          white-space: pre !important; /* CRITICAL: Must stay pre for line numbering sync */
+          word-spacing: normal !important;
+          word-break: normal !important;
+          overflow-wrap: normal !important;
+          tab-size: 4 !important;
+          min-width: 100%; /* Ensures the highlight and background cover full width */
+      }
+
+      .resize-handle {
+        background-color: #3C3C3C;
+        transition: background-color 0.2s ease-in-out;
+      }
+      .resize-handle[data-dragging='true'], .resize-handle:hover {
+          background-color: #2196F3;
+      }
+
+      .main-grid-bg {
+        background-image:
+          linear-gradient(rgba(33, 150, 243, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(33, 150, 243, 0.05) 1px, transparent 1px);
+        background-size: 2rem 2rem;
+        background-position: center center;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.22.0",
+    "react-simple-code-editor": "https://esm.sh/react-simple-code-editor@0.13.1?deps=react@18.2.0",
+    "prismjs": "https://esm.sh/prismjs@1.29.0",
+    "prismjs/": "https://esm.sh/prismjs@1.29.0/",
+    "react-resizable-panels": "https://esm.sh/react-resizable-panels@2.0.19?deps=react@18.2.0",
+    "react-markdown": "https://esm.sh/react-markdown@9?deps=react@18.2.0",
+    "remark-gfm": "https://esm.sh/remark-gfm@4"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-900 text-gray-200 font-mono">
+    <div id="root" class="h-screen"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

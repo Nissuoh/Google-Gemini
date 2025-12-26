@@ -1,0 +1,5 @@
+{
+  "name": "Akademie der Professoren",
+  "description": "Eine interaktive, KI-gestützte Lernplattform, um die Grundlagen populärer Programmiersprachen zu vermitteln. Wähle eine Sprache und lerne von einem spezialisierten KI-Tutor.",
+  "requestFramePermissions": []
+}
